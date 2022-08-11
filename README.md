@@ -8,9 +8,21 @@ processing for a given external or built-in command when applicable. After the c
 display any appropiate output for the command in the terminal.
 
 ## How to Compile?
+First, ensure that you are in the `UNIX-Shell-Terminal` directory and then run the following commands:
+```
+$ make clean
+$ make
+```
+
+If the Makefile isn't working, then you make try the following commands as well in the same directory:
+```
+$ gcc -g -Wno-parentheses -Wno-format-security -DHAVE_CONFIG_H -DRL_LIBRARY_VERSION='"8.1"' -I/home/myid/ingrid/usr/local/include -c yosh.c
+$ gcc -g -Wno-parentheses -Wno-format-security -DHAVE_CONFIG_H -DRL_LIBRARY_VERSION='"8.1"' -I/home/myid/ingrid/usr/local/include -c parse.c
+$ gcc -g -Wall -o yosh yosh.o parse.o /home/myid/ingrid/usr/local/lib/libreadline.a -ltermcap -lcurses
+```
 
 ## How to Run?
-First, change into the `UNIX-Shell-Terminal` directory and then run the following command: 
+First, ensure that you are in the `UNIX-Shell-Terminal` directory and then run the following command: 
 ```
 $ ./yosh
 ```
