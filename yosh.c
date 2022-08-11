@@ -105,7 +105,7 @@ char * buildPrompt() {
    -------------------------------------------------------------------------------*/
 int isBuiltInCommand( char * cmd )
 {
-    if(strncmp(cmd, "exit", strlen("exit")) == 0) {
+    if (strncmp(cmd, "exit", strlen("exit")) == 0) {
         return EXIT;
     } else if (strncmp(cmd, "help", strlen("help")) == 0 ) {
         return HELP;
@@ -441,8 +441,8 @@ int excuetePipes (int numPipes) {
     int numberOfArguments = 0;
     static char *argv[100];
 
-    for(i = 0; i < (numPipes); i++){
-        if(pipe(pipefds + i*2) < 0) {
+    for (i = 0; i < (numPipes); i++){
+        if (pipe(pipefds + i*2) < 0) {
             perror("couldn't pipe");
             exit(EXIT_FAILURE);
         }
@@ -450,21 +450,21 @@ int excuetePipes (int numPipes) {
 
     int j = 0;
 
-    while(k < numPipes +1) {
+    while (k < numPipes +1) {
         pid = fork();
         if(pid == 0) {
 
-            if(j != numPipes + 1) {
-                if(dup2(pipefds[j + 1], 1) < 0){
+            if (j != numPipes + 1) {
+                if (dup2(pipefds[j + 1], 1) < 0) {
                 }
             }
 
-            if(j != 0 ){
+            if(j != 0 ) {
                 if(dup2(pipefds[j-2], 0) < 0) {
                 }
             }
 
-            for(i = 0; i < 2*numPipes; i++){
+            for (i = 0; i < 2*numPipes; i++) {
                 close(pipefds[i]);
             }
 
@@ -508,7 +508,7 @@ int excuetePipes (int numPipes) {
                 if (strcmp(fileName, "") == 0) {
                     fprintf(stderr, "\nMissing name for redirect.\n\n");
                     validInput = 0;
-                } else if(access(fileName, F_OK ) == 0) {
+                } else if (access(fileName, F_OK ) == 0) {
                     fprintf(stderr, "\n%s: File exists\n\n", fileName);
                     validInput = 0;
                 } else {
@@ -555,7 +555,7 @@ int excuetePipes (int numPipes) {
 
             argv[numberOfArguments++] = NULL;
 
-            if( execvp(com->command, argv) < 0 ) {
+            if (execvp(com->command, argv) < 0 ) {
                 fprintf(stderr, "\n-yosh: %s: command not found...\n\n", com->command);
                 return 1;
             }
@@ -571,11 +571,11 @@ int excuetePipes (int numPipes) {
         j+=2;
     }
 
-    for(i = 0; i < 2 * numPipes; i++){
+    for (i = 0; i < 2 * numPipes; i++){
         close(pipefds[i]);
     }
 
-    for(i = 0; i < numPipes + 1; i++) {
+    for (i = 0; i < numPipes + 1; i++) {
         wait(&status);
     }
 
@@ -593,13 +593,13 @@ void excueteCommand(char *enteredCommand) {
     int    status;
     static int numBackgroundProcess = 0;
 
-    if( isBuiltInCommand(enteredCommand) == EXIT) {
+    if (isBuiltInCommand(enteredCommand) == EXIT) {
 
         if (numberBackgroundProcessActive(numBackgroundProcess) == 0) {
             fprintf(stdout, "\n");
             exit(1);
         } else {
-           fprintf(stderr, "\nThere are processes in the background.");
+            fprintf(stderr, "\nThere are processes in the background.");
             fprintf(stderr, "\nYou must kill those background processes ");
             fprintf(stderr, "before exiting.\n\n");
         }
@@ -612,7 +612,7 @@ void excueteCommand(char *enteredCommand) {
 
         historyCommand(0, 0, "");
 
-    } else  if (isBuiltInCommand(enteredCommand) == REPEAT) {
+    } else if (isBuiltInCommand(enteredCommand) == REPEAT) {
 
         static int commandNumber;
         char *actualCommand;
@@ -678,7 +678,7 @@ void excueteCommand(char *enteredCommand) {
 
         if (com->VarList[1] != NULL) {
 
-            if(strchr(com->VarList[1], '%') != NULL) {
+            if (strchr(com->VarList[1], '%') != NULL) {
 
                 char * jobNumberString = com->VarList[1];
                 memmove(jobNumberString, jobNumberString+1, strlen(jobNumberString));
@@ -825,33 +825,31 @@ int main( int argc, char **argv )
     	// insert your code here
 
     	cmdLine = readline( buildPrompt() );
-    	if( cmdLine == NULL ) {
+    	if (cmdLine == NULL) {
       		fprintf(stderr, "Unable to read command\n");
       		continue;
     	}
 
     	// calls the parser
     	info = parse( cmdLine );
-        if( info == NULL )
-        {
+      if (info == NULL) {
       		free(cmdLine);
       		continue;
-    	}
+      }
 
     	// prints the info struct
     	// print_info( info );
 
     	//com contains the info. of the command before the first "|"
     	com = &info->CommArray[0];
-    	if( (com == NULL)  || (com->command == NULL))
-    	{
+    	if((com == NULL)  || (com->command == NULL)) {
       		free_info(info);
       		free(cmdLine);
       		continue;
     	}
 
         // insert your code about history and !x !-x here
-        if(com->command[0] != '!') {
+        if (com->command[0] != '!') {
             historyCommand(1, 0, cmdLine);
             commandArguments[0] = strdup(com->command);
             if (com->VarList[1] != NULL) {
