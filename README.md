@@ -11,7 +11,7 @@ display any appropiate output for the command in the terminal.
 
 ## How to Run?
 ```
-yosh
+$ yosh
 ```
 
 ## Technologies Used
