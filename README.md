@@ -10,9 +10,9 @@ display any appropiate output for the command in the terminal.
 ## How to Compile?
 
 ## How to Run?
-'''
+```
 yosh
-'''
+```
 
 ## Technologies Used
 Programming Lanugages: C, Makefile
