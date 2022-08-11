@@ -10,8 +10,9 @@ display any appropiate output for the command in the terminal.
 ## How to Compile?
 
 ## How to Run?
+First, change into the `UNIX-Shell-Terminal` directory and then run the following command: 
 ```
-$ yosh
+$ ./yosh
 ```
 
 ## Technologies Used
