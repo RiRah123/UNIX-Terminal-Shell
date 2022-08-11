@@ -842,7 +842,7 @@ int main( int argc, char **argv )
 
     	//com contains the info. of the command before the first "|"
     	com = &info->CommArray[0];
-    	if((com == NULL)  || (com->command == NULL)) {
+    	if ((com == NULL)  || (com->command == NULL)) {
       		free_info(info);
       		free(cmdLine);
       		continue;
