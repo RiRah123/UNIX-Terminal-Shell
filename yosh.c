@@ -107,7 +107,7 @@ int isBuiltInCommand( char * cmd )
 {
     if(strncmp(cmd, "exit", strlen("exit")) == 0) {
         return EXIT;
-  	 } else if (strncmp(cmd, "help", strlen("help")) == 0 ) {
+    } else if (strncmp(cmd, "help", strlen("help")) == 0 ) {
         return HELP;
     } else if (strncmp(cmd, "history", strlen("history")) == 0 ) {
         return HISTORY;
