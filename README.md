@@ -7,6 +7,13 @@ will be prompted to enter a UNIX command. The shell supports several commands so
 processing for a given external or built-in command when applicable. After the command is entered, the shell will excuete the command and 
 display any appropiate output for the command in the terminal.
 
+## How to Compile?
+
+## How to Run?
+'''
+yosh
+'''
+
 ## Technologies Used
 Programming Lanugages: C, Makefile
 
