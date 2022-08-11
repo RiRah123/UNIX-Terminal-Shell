@@ -1,0 +1,45 @@
+if( isBuiltInCommand(com->command) == EXIT) {
+printf("\n");
+exit(1);
+} else if (isBuiltInCommand(com->command) == HELP) {
+helpCommand();
+} else if (isBuiltInCommand(com->command) == HISTORY) {
+historyCommand(0, 0, "");
+} else  if (isBuiltInCommand(com->command) == REPEATPOSTIVE
+|| isBuiltInCommand(com->command) == REPEATNEGATIVE) {
+char * actualCommand;
+if (isBuiltInCommand(com->command) == REPEATPOSTIVE) {
+actualCommand = historyCommand(0, 1, "");
+} else {
+actualCommand = historyCommand(0, -1, "");
+}
+repeatCommand(actualCommand);
+} else if (isBuiltInCommand(com->command) == JOBS) {
+
+} else if (isBuiltInCommand(com->command) == CD) {
+if (com->VarList[2] != NULL) {
+moreThanOneDirectory("cd");
+} else if (com->VarList[1] != NULL) {
+cdCommand(com->VarList[1]);
+} else {
+cdCommand(getenv("HOME"));
+}
+} else if (isBuiltInCommand(com->command) == KILL) {
+
+} else {
+childPid = fork();
+if (childPid < 0) {
+
+} else if (childPid == 0) {
+static char *argv[100];
+int numberOfArguments = 0;
+while (com->VarList[numberOfArguments] != NULL) {
+argv[numberOfArguments] = com->VarList[numberOfArguments];
+numberOfArguments++;
+}
+argv[numberOfArguments++] = NULL;
+execvp(com->command, argv);
+} else {
+while (wait(&status) != childPid);
+}
+}
