@@ -1,4 +1,4 @@
-# UNIX-Shell-Terminal
+# UNIX-Terminal-Shell
 
 ## Project Summary
 `Yosh` is a rudimentary shell built in C, which micks the core functionality of the UNIX shell. When the shell is started, the user
