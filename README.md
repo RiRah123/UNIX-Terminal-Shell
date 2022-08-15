@@ -8,7 +8,7 @@ processing for a given external or built-in command when applicable. After the c
 display any appropiate output for the command in the terminal.
 
 ## How to Compile?
-First, ensure that you are in the `UNIX-Shell-Terminal` directory and then run the following commands:
+First, ensure that you are in the `UNIX-Terminal-Shell` directory and then run the following commands:
 ```
 $ make clean
 $ make
@@ -22,7 +22,7 @@ $ gcc -g -Wall -o yosh yosh.o parse.o /home/myid/ingrid/usr/local/lib/libreadlin
 ```
 
 ## How to Run?
-First, ensure that you are in the `UNIX-Shell-Terminal` directory and then run the following command: 
+First, ensure that you are in the `UNIX-Terminal-Shell` directory and then run the following command: 
 ```
 $ ./yosh
 ```
