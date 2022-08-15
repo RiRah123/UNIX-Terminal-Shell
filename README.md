@@ -28,7 +28,7 @@ $ ./yosh
 ```
 
 ## Technologies Used
-Programming Lanugages: C, Makefile
+Programming Lanugages: C, Makefile, Valgrind
 
 ## Demo Video
 [![Unix Shell Terminal Demo](https://img.youtube.com/vi/dlJn5VeZZUw/maxresdefault.jpg)](https://youtu.be/dlJn5VeZZUw "Unix Shell Terminal Demo")
