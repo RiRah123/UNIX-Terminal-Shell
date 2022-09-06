@@ -1,5 +1,5 @@
 # UNIX-Terminal-Shell
-(https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)]()
+[![](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)]()
 
 ## Project Summary
 `Yosh` is a rudimentary shell built in C, which micks the core functionality of the UNIX shell. When the shell is started, the user
