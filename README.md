@@ -1,4 +1,5 @@
 # UNIX-Terminal-Shell
+[![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)]()
 
 ## Project Summary
 `Yosh` is a rudimentary shell built in C, which micks the core functionality of the UNIX shell. When the shell is started, the user
@@ -26,9 +27,6 @@ First, ensure that you are in the `UNIX-Terminal-Shell` directory and then run t
 ```
 $ ./yosh
 ```
-
-## Technologies Used
-Programming Lanugages: C, Makefile, Valgrind
 
 ## Demo Video
 [![Unix Shell Terminal Demo](https://img.youtube.com/vi/dlJn5VeZZUw/maxresdefault.jpg)](https://youtu.be/dlJn5VeZZUw "Unix Shell Terminal Demo")
