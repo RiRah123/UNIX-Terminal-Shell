@@ -2,7 +2,7 @@
 [![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)]()
 
 ## Project Summary
-`Yosh` is a rudimentary shell built in C, which micks the core functionality of the UNIX shell. When the shell is started, the user
+`Yosh` is a rudimentary shell built in C, which mimicks the core functionality of the UNIX shell. When the shell is started, the user
 will be prompted to enter a UNIX command. The shell supports several commands some of which were built-in, including `jobs`, `history`, 
 `kill`, `cd`, `help`, and `exit`. Additionally, the shell allows for input/output redirection, piping, and background/foreground
 processing for a given external or built-in command when applicable. After the command is entered, the shell will excuete the command and 
