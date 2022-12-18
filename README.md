@@ -30,4 +30,4 @@ $ ./yosh
 
 ## Demo Video
 
-Uploading UNIX Terminal Shell Demo.mp4…
+https://user-images.githubusercontent.com/83044307/208279480-03a888bb-1fc8-4aa5-b9c4-a16c6bd7399b.mp4
